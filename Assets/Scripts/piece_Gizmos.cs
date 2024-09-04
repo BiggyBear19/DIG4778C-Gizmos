@@ -6,60 +6,65 @@ using UnityEngine;
 
 public class piece_Gizmos : MonoBehaviour
 {
-   
-   
-        public enum PieceType
+  
+       public enum PieceType
         {
-            Pawn,
-            Rook,
-            Knight,
-            Bishop,
-            Queen,
-            King
+           Pawn,
+           Rook,
+           Knight,
+           Bishop,
+           Queen,
+           King
         }
         
-        [SerializeField] 
-        private PieceType pieceType;
+       [SerializeField] 
+       private PieceType pieceType;
 
-        [SerializeField] 
-        private GameObject thisPiece;
+       [SerializeField] 
+       private GameObject thisPiece;
    
-        public void OnDrawGizmos()
-        {
-            switch (pieceType)
-            {
-                case PieceType.Pawn:
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 2);
+       public void OnDrawGizmos()
+       {
+           switch (pieceType)
+           {
+               case PieceType.Pawn:
+                   Gizmos.color = Color.red;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 2);
+                   //access the sprite
                     
+                   break;
+               case PieceType.Rook:
+                   Gizmos.color = Color.blue;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 8);
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.right * 8);
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.back * 8);
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.left * 8);
+                    //access the sprite
+                   break;
+               case PieceType.Knight:
+                   Gizmos.color = Color.green;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 2);
+                    //access the sprite
                     break;
-                case PieceType.Rook:
-                    Gizmos.color = Color.blue;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 8);
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.right * 8);
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.back * 8);
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.left * 8);
+               case PieceType.Bishop:
+                   Gizmos.color = Color.yellow;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
+                    //access the sprite
                     break;
-                case PieceType.Knight:
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 2);
+               case PieceType.Queen:
+                   Gizmos.color = Color.magenta;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
+                    //access the sprite
                     break;
-                case PieceType.Bishop:
-                    Gizmos.color = Color.yellow;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
+               case PieceType.King:
+                   Gizmos.color = Color.cyan;
+                   Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
+                    //access the sprite
                     break;
-                case PieceType.Queen:
-                    Gizmos.color = Color.magenta;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
-                    break;
-                case PieceType.King:
-                    Gizmos.color = Color.cyan;
-                    Gizmos.DrawLine(thisPiece.transform.position, thisPiece.transform.position + Vector3.forward * 0.5f);
-                    break;
-            }
-        }
+           }
+       }
         
-    }
+}
     /*
     private class Pawn:Pieces
     {
