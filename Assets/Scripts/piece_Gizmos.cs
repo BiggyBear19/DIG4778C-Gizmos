@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class piece_Gizmos : MonoBehaviour
 {
-    private class Piece
-    {
+   
+   
         public enum PieceType
         {
             Pawn,
@@ -119,4 +119,3 @@ public class piece_Gizmos : MonoBehaviour
     
     
     
-}
