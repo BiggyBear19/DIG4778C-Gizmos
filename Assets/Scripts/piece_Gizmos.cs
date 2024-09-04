@@ -20,6 +20,7 @@ public class piece_Gizmos : MonoBehaviour
         
         [SerializeField] 
         private PieceType pieceType;
+
         [SerializeField] 
         private GameObject thisPiece;
    
